@@ -1,11 +1,18 @@
 @extends('layouts.app')
 
+
 @section('content')
+@push('head')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="{{ asset('js/script.js')}}"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+
+@endpush
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Enter your custmoers details:') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
