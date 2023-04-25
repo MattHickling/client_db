@@ -76,5 +76,7 @@
             @yield('content')
         </main>
     </div>
+    {{-- <script src="{{ asset('js/my-script.js') }}"></script> --}}
+
 </body>
 </html>
