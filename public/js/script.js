@@ -1,15 +1,17 @@
-
-
-
-
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 37.7749, lng: -122.4194},
-          zoom: 8
+function initMap(post_code) {
+    let geocoder = new google.maps.Geocoder();
+  
+    geocoder.geocode({'address': post_code}, function(results, status) {
+      if (status === 'OK') {
+        let map = new google.maps.Map(document.getElementById('map'), {
+          center: results[0].geometry.location,
+          zoom: 15
+        });
+        let marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
         });
       }
-
-    
-
-// AIzaSyCV6jR_b13NVklyQYPgl7SjCtBFcURQQmI
-
+    });
+  }
+  

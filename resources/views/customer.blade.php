@@ -54,8 +54,9 @@
                 <td>{{ $customer->created_at }}</td>
                 <td>{{ $customer->updated_at }}</td>
                 <td>   
+                  {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal" onclick="initMap('{{ $customer->post_code }}')">Get location</button> --}}
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal" onclick="initMap('{{ $customer->post_code }}')">Get location</button>
-                        
+
                       <!-- Modal -->
                       <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
