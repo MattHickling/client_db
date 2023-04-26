@@ -27,3 +27,4 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/customer', [CustomerController::class, 'store']);
 Route::get('/customer', [CustomerController::class, 'index']);
 
+

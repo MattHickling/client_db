@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Client DB</title>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV6jR_b13NVklyQYPgl7SjCtBFcURQQmI"></script>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
