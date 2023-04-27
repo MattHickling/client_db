@@ -1,7 +1,9 @@
-function initMap(post_code) {
+
+
+function initMap(customer) {
     let geocoder = new google.maps.Geocoder();
   
-    geocoder.geocode({'address': post_code}, function(results, status) {
+    geocoder.geocode({ 'address': customer.post_code }, function(results, status) {
       if (status === 'OK') {
         let map = new google.maps.Map(document.getElementById('map'), {
           center: results[0].geometry.location,
@@ -13,8 +15,22 @@ function initMap(post_code) {
         });
       }
     });
+  
+    // Set the customer data in the modal content elements
+    document.getElementById('companyID').innerText = customer.id;
+    document.getElementById('companyName').innerText = customer.company_name;
+    document.getElementById('firstName').innerText = customer.first_name;
+    document.getElementById('lastName').innerText = customer.last_name;
+    document.getElementById('phoneNumber').innerText = customer.phone_number;
+    document.getElementById('houseNumber').innerText = customer.house_number_or_name;
+    document.getElementById('streetName').innerText = customer.street_name;
+    document.getElementById('town').innerText = customer.town;
+    document.getElementById('county').innerText = customer.county;
+    document.getElementById('country').innerText = customer.country;
+    document.getElementById('postCode').innerText = customer.post_code;
   }
- 
+
+  
 
   function validatePostCode(post_code) {
     let postCodeRegex = /^[A-Z0-9]{1,4}[ -]?[A-Z0-9]{1,4}$/i;
@@ -75,3 +91,8 @@ function initMap(post_code) {
     });
   });
   
+
+
+  $(document).ready(function() {
+    $('#customerTable').DataTable();
+});
