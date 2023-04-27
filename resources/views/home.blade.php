@@ -5,7 +5,7 @@
 @push('head')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="{{ asset('js/script.js')}}"></script>
-{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 @endpush
 <div class="container">
@@ -21,7 +21,7 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="/customer">
+                    <form method="POST" action="/customer" id="customer-form" >
                         @csrf
                     
                         <div class="mb-3">
@@ -73,7 +73,7 @@
                             <input type="text" name="post_code" id="post_code" class="form-control" required>
                         </div>
                     
-                        <button type="submit" class="btn btn-success">Submit</button>
+    
 
                         <a href="/customer" class="btn btn-primary">Go to Customer List</a>
 
@@ -85,6 +85,6 @@
             </div>
         </div>
     </div>
-</div
+</div>
 
 @endsection

@@ -21,7 +21,7 @@
         <table class="table table-striped table-bordered">
             <thead>
               <tr>
-                <th>ID</th>
+                {{-- <th>ID</th> --}}
                 <th>Company Name</th>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -32,15 +32,15 @@
                 <th>County</th>
                 <th>Country</th>
                 <th>Post Code</th>
-                <th>Created At</th>
-                <th>Updated At</th>
-                <th>Actions</th>
+                {{-- <th>Created At</th>
+                <th>Updated At</th> --}}
+                <th>Location</th>
               </tr>
             </thead>
             <tbody>
               @foreach ($customers as $customer)
               <tr>
-                <td>{{ $customer->id }}</td>
+                {{-- <td>{{ $customer->id }}</td> --}}
                 <td>{{ $customer->company_name }}</td>
                 <td>{{ $customer->first_name }}</td>
                 <td>{{ $customer->last_name }}</td>
@@ -51,8 +51,8 @@
                 <td>{{ $customer->county }}</td>
                 <td>{{ $customer->country }}</td>
                 <td>{{ $customer->post_code }}</td>
-                <td>{{ $customer->created_at }}</td>
-                <td>{{ $customer->updated_at }}</td>
+                {{-- <td>{{ $customer->created_at }}</td>
+                <td>{{ $customer->updated_at }}</td> --}}
                 <td>   
                   {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal" onclick="initMap('{{ $customer->post_code }}')">Get location</button> --}}
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal" onclick="initMap('{{ $customer->post_code }}')">Get location</button>
