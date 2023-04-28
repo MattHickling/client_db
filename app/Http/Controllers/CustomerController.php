@@ -21,8 +21,10 @@ class CustomerController extends Controller
         $customer->country = $request->input('country');
         $customer->post_code = $request->input('post_code');
         $customer->save();
+        
 
-        return redirect('/customer')->with('success', 'Customer added successfully');
+        return redirect('/customer');   
+        // ->with('success', 'Customer added successfully');
     }
 
     public function index()

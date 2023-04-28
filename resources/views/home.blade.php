@@ -2,25 +2,15 @@
 
 
 @section('content')
-@push('head')
-{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> --}}
-{{-- <script src="{{ asset('js/script.js')}}"></script> --}}
-{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 
-@endpush
 <div class="container">
+    <div id="success-message" class="alert alert-success d-none" role="alert"></div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Enter your custmoers details:') }}</div>
+                <div class="card-header">{{ __('Enter your customers details:') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
+                
                     <form method="POST" action="/customer" id="customer-form" >
                         @csrf
                     

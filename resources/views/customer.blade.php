@@ -1,20 +1,13 @@
 @extends('layouts.app')
 
+
 @section('content')
 
-@push('head')
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV6jR_b13NVklyQYPgl7SjCtBFcURQQmI"></script>
-<script src="{{ asset('js/script.js')}}"></script>
-
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
-
-
-@endpush
-    <div class="container">
         <h1>List of Customers</h1>
 
+        <div class="container">
+        
+      
         <table id="customerTable" class="table table-striped table-bordered" >
             <thead>
               <tr>
@@ -51,29 +44,24 @@
                 <td>{{ $customer->created_at }}</td>
                 <td>{{ $customer->updated_at }}</td>
                 <td>   
-                  {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal" onclick="initMap('{{ $customer->post_code }}')">Get location</button> --}}
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal{{ $customer->id }}" onclick="initMap({{ $customer }})">Customer details</button>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal" onclick="initMap({{ $customer }})">Show</button>
 
-                  <div class="modal fade" id="locationModal{{ $customer->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-lg">
+                      <!-- Modal -->
+                      <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
                           <div class="modal-content">
-                              <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Customer location</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body row">
-                                  <div class="col-md-12">
-                                      <div id="map" style="height: 400px;"></div>
-                                  </div>
-                              </div>
-                              <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              </div>
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Customers location</h5>
+                            </div>
+                            <div class="modal-body" >
+                              <div id="map" style="height: 400px; width: 100%;"></div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
                           </div>
+                        </div>
                       </div>
-                  </div>
-                  
-                      
                 </td>
               </tr>
               @endforeach
@@ -81,10 +69,13 @@
           </table>
           <button type="button" class="btn btn-secondary" onclick="window.location.href='/home'">Back</button>
         </div>
+        
     </div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV6jR_b13NVklyQYPgl7SjCtBFcURQQmI&callback=initMap">
-  </script>
+    
+
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap">
+    </script>
  
 @endsection
 

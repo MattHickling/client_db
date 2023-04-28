@@ -10,7 +10,7 @@
     <title>Client db</title>
 
     
-
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,20 +19,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    {{-- <link href="{{ asset('datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet"> --}}
+    <!-- Datatables -->
     <script src="{{ asset('datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('datatables/dataTables.bootstrap.min.js') }}"></script>
-
-    {{-- <script src="{{ asset('datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('datatables/dataTables.bootstrap.min.js') }}"></script> --}}
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    
-    
-
-
+ 
 </head>
 <body>
 
@@ -41,7 +35,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- {{ config('app.name', 'Laravel') }} --}}Client DB
+                    Client db
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
