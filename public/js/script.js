@@ -1,6 +1,10 @@
 
 
 function initMap(customer) {
+    if (!customer || !customer.post_code) {
+        return;
+      }
+
     let geocoder = new google.maps.Geocoder();
   
     geocoder.geocode({ 'address': customer.post_code }, function(results, status) {
@@ -15,19 +19,7 @@ function initMap(customer) {
         });
       }
     });
-  
-    // Set the customer data in the modal content elements
-    document.getElementById('companyID').innerText = customer.id;
-    document.getElementById('companyName').innerText = customer.company_name;
-    document.getElementById('firstName').innerText = customer.first_name;
-    document.getElementById('lastName').innerText = customer.last_name;
-    document.getElementById('phoneNumber').innerText = customer.phone_number;
-    document.getElementById('houseNumber').innerText = customer.house_number_or_name;
-    document.getElementById('streetName').innerText = customer.street_name;
-    document.getElementById('town').innerText = customer.town;
-    document.getElementById('county').innerText = customer.county;
-    document.getElementById('country').innerText = customer.country;
-    document.getElementById('postCode').innerText = customer.post_code;
+
   }
 
   
@@ -36,7 +28,7 @@ function initMap(customer) {
     let postCodeRegex = /^[A-Z0-9]{1,4}[ -]?[A-Z0-9]{1,4}$/i;
     let areaCodeRegex = /^\d{1,5}$/;
     
-    // Check if the post code matches either the UK post code or international area code format
+    //Post code matches either the UK post code or international area code format
     if (postCodeRegex.test(post_code) || areaCodeRegex.test(post_code)) {
       return true;
     } else {
@@ -96,3 +88,4 @@ function initMap(customer) {
   $(document).ready(function() {
     $('#customerTable').DataTable();
 });
+

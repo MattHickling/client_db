@@ -11,8 +11,6 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 
 
-
-
 @endpush
     <div class="container">
         <h1>List of Customers</h1>
@@ -54,35 +52,28 @@
                 <td>{{ $customer->updated_at }}</td>
                 <td>   
                   {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal" onclick="initMap('{{ $customer->post_code }}')">Get location</button> --}}
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal" onclick="initMap({{ $customer }})">Get location</button>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal{{ $customer->id }}" onclick="initMap({{ $customer }})">Customer details</button>
 
-                      <!-- Modal -->
-                      <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                  <div class="modal fade" id="locationModal{{ $customer->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered modal-lg">
                           <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Customers location</h5>
-                            </div>
-                            <div class="modal-body">
-                              <div id="map" style="height: 400px; width: 100%;"></div>
-                              <p>Company ID: <span id="companyID"></span></p>
-                              <p>Company Name: <span id="companyName"></span></p>
-                              <p>First Name: <span id="firstName"></span></p>
-                              <p>Last Name: <span id="lastName"></span></p>
-                              <p>Phone Number: <span id="phoneNumber"></span></p>
-                              <p>House Number or Name: <span id="houseNumber"></span></p>
-                              <p>Street Name: <span id="streetName"></span></p>
-                              <p>Town: <span id="town"></span></p>
-                              <p>County: <span id="county"></span></p>
-                              <p>Country: <span id="country"></span></p>
-                              <p>Post Code: <span id="postCode"></span></p>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Customer location</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body row">
+                                  <div class="col-md-12">
+                                      <div id="map" style="height: 400px;"></div>
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              </div>
                           </div>
-                        </div>
                       </div>
+                  </div>
+                  
+                      
                 </td>
               </tr>
               @endforeach

@@ -77,7 +77,7 @@
 
                         <a href="/customer" class="btn btn-primary">Go to Customer List</a>
 
-                        <button type="submit" id="submit-button" class="btn btn-success">Submit</button>
+                        <button type="submit" id="submit-button" class="btn btn-success m-2">Submit</button>
 
 
                     </form>
