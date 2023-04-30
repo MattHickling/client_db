@@ -24,7 +24,6 @@ class CustomerController extends Controller
         
 
         return redirect('/customer');   
-        // ->with('success', 'Customer added successfully');
     }
 
     public function index()

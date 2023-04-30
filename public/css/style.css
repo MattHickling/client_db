@@ -1,0 +1,41 @@
+.display-2 {
+    color: blue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+
+.navbar-brand{
+    font-size: 4rem !important;
+    color: gold !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+.db{
+    color: blue;
+  }
+
+.list-title{
+    margin-left: 2%;
+  }
+
+th{
+    font-size: 1.2rem;
+    background-color: gold !important;
+    color: black;
+    border: 1px solid grey;
+  }
+
+
+table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+#client-db{
+        color: gold;
+    }
+
+.lp-db{
+        color: blue;
+    }
+

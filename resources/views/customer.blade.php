@@ -3,7 +3,7 @@
 
 @section('content')
 
-        <h1>List of Customers</h1>
+        <h1 class="list-title">List of Customers</h1>
 
         <div class="container">
         
@@ -43,10 +43,9 @@
                 <td>{{ $customer->post_code }}</td>
                 <td>{{ $customer->created_at }}</td>
                 <td>{{ $customer->updated_at }}</td>
-                <td>   
+                <td class="text-center">   
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal" onclick="initMap({{ $customer }})">Show</button>
 
-                      <!-- Modal -->
                       <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
